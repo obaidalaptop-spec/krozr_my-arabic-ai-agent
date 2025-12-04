@@ -9,15 +9,15 @@ if "user_name" not in st.session_state:
     st.session_state.user_name = ""
 
 if not st.session_state.user_name:
-    st.title("مرحباً! 👋")
-    name = st.text_input("ما اسمك؟", placeholder="اكتب اسمك هنا...")
+    st.title("بتحكي معي يقلبي ")
+    name = st.text_input("شو اسم الحلو؟", placeholder="حط اسمك هون اغلبك...")
     if name:
         st.session_state.user_name = name
         st.rerun()  # يعيد تحميل الصفحة بعد ما يدخل الاسم
 else:
     # --- إذا كان الاسم موجود، شغّل الشات ---
-    st.title(f"🤖 محادثتك مع الوكيل، يا {st.session_state.user_name}!")
-    st.markdown("الوكيل يفهم السياق! لما تقول 'آه'، يعرف إنك توافق على الاقتراح السابق.")
+    st.title(f"خرافك معي يغالي {st.session_state.user_name}!")
+    st.markdown("شوف انا بحاول افهمك بس تصعبهاش علي")
 
 # --- استمرار المحادثة (مثل الكود السابق) ---
 if "messages" not in st.session_state:
@@ -66,4 +66,5 @@ if st.session_state.user_name:  # بس يفتح الشات لو عنده اسم
         # أضف الرد
         st.session_state.messages.append({"role": "assistant", "content": reply})
         with st.chat_message("assistant"):
+
             st.markdown(reply)

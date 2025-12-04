@@ -28,7 +28,7 @@ def get_ai_response(messages_list):
     try:
         chat_completion = client.chat.completions.create(
             messages=messages_list,
-            model="llama3-8b-8192",
+            model="moonshotai/kimi-k2-instruct-0905",
             temperature=0.7,
         )
         return chat_completion.choices[0].message.content
@@ -68,3 +68,4 @@ if st.session_state.user_name:  # بس يفتح الشات لو عنده اسم
         with st.chat_message("assistant"):
 
             st.markdown(reply)
+

@@ -2,7 +2,7 @@ import streamlit as st
 from groq import Groq
 
 # --- الإعدادات ---
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "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"
 
 # --- اطلب الاسم أول مرة ---
 if "user_name" not in st.session_state:
@@ -68,5 +68,6 @@ if st.session_state.user_name:  # بس يفتح الشات لو عنده اسم
         with st.chat_message("assistant"):
 
             st.markdown(reply)
+
 
 
